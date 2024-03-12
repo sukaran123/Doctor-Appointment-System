@@ -42,7 +42,7 @@ const loginController = async (req, res) => {
     if (!isMatch) {
       return res
         .status(200)
-        .send({ message: "Invalid EMail or Password", success: false });
+        .send({ message: "Invlid EMail or Password", success: false });
     }
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1d",
